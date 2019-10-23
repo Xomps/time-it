@@ -1,0 +1,36 @@
+{
+  "name": "time-it",
+  "version": "1.0.0",
+  "description": "Simple function timing",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc --watch --pretty",
+    "build": "tsc"
+  },
+  "keywords": [
+    "time",
+    "timing",
+    "utility",
+    "performance",
+    "profiling"
+  ],
+  "author": "Xomps <xomps.x@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xomps/time-it.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xomps/time-it/issues"
+  },
+  "homepage": "https://github.com/Xomps/time-it#readme"
+}
