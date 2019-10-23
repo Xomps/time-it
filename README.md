@@ -1,29 +1,34 @@
-> Simple function timing
+Simple function timing, by default logs to the console (e.g. `Generate API: 5.877s`)
 
-# API
+## Install
+
+```bash
+
+npm install github:xomps/time-it
+
+```
+
+## API / Examples
 
 ```js
 
   import time from 'time-it'
-  import work from './stuff/work'
-  import moreWork from './stuff/more'
+  import { generateKey, encrypt } from './lib'
 
-  await time('Do the work', work)
-  // Do the work: 12.735s
+  const { returnVal: key } = await time('Generate key', generateKey) // -> Generate key: 12.735s
 
-  const { returnVal, ms } = await time('More work', moreWork)
-  console.log({returnVal, ms})
-  // { "returnVal": "yes", "ms": 55468 }
+  const { returnVal: encryptedData, ms } = await time('Encrypt', () => encrypt(key), false)
+  console.log(ms) // -> 55468
 
 ```
 
-# Types
+## Types
 ```typescript
 
   function timeIt(
     label: string,        // label used for console.log
     fn: () => any,        // function to time
-    log?: boolean         // log to console
+    log?: boolean = true  // log to console
   ): Promise<{
     returnVal: any;       // return value of fn
     ms: number;           // raw milliseconds
